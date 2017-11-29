@@ -27,4 +27,8 @@ object SpaceAge {
         Math.round(double * 100).toDouble / 100
     }
 
+    private def toTwoDecimalPlacesOther(value: Double) : Double = {
+        BigDecimal(value).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
+    }
+
 }
