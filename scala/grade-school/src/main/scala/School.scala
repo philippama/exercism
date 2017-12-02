@@ -5,14 +5,9 @@ class School {
 
   var db: DB = Map[Int, Seq[String]]()
 
-  def add(name: String, grade: Int): Unit = {
-    val studentsWithGrade: Seq[String] = db.get(grade)
-            .map(_ :+ name)
-            .getOrElse(List(name))
-    db = db + (grade -> studentsWithGrade)
-  }
+  def add(name: String, g: Int): Unit = db += (g -> (grade(g) :+ name))
 
-  def grade(g: Int): Seq[String] = db.getOrElse(g, List())
+  def grade(g: Int): Seq[String] = db.getOrElse(g, Seq())
 
   def sorted: DB = {
     val sortedValues = db.mapValues(_.sorted)
