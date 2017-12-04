@@ -2,9 +2,22 @@ import scala.annotation.tailrec
 import scala.collection.mutable
 
 class Accumulate {
+  // Trying two different ways
   def accumulate[A, B](f: (A) => B, list : List[A]): List[B] = {
-    usingSimpleAccumulator(f, list)
+//    usingSimpleAccumulator(f, list)
 //    usingTailRecursion(f, list, List[B]())
+    other(f, list)
+  }
+
+  def other[A, B](f: (A) => B, list : List[A]): List[B] = {
+    for(a <- list) yield f(a)
+  }
+
+  def other1[A, B](f: (A) => B, list : List[A]): List[B] = {
+    list match {
+      case List() => List()
+      case head::tail => f(head) :: accumulate(f, tail)
+    }
   }
 
   def usingSimpleAccumulator[A, B](f: (A) => B, list : List[A]): List[B] = {
