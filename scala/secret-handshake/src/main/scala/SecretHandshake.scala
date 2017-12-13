@@ -1,12 +1,27 @@
-object SecretHandshake {
-    def commands(binary: Int): List[String] = {
-        val list1 = if ((binary & 1) != 0) List("wink") else List[String]()
-        val list10 = if ((binary & 2) != 0)  list1 :+ "double blink" else list1
-        val list100 = if ((binary & 4) != 0)  list10 :+ "close your eyes" else list10
-        val list1000 = if ((binary & 8) != 0)  list100 :+ "jump" else list100
-        val list10000 = if ((binary & 16) != 0)  list1000.reverse else list1000
+import scala.collection.mutable
 
-        list10000
+object SecretHandshake {
+    def commands(number: Int): List[String] = {
+        Some(List[String]())
+                .map(withBinaryDigit(_, number, 0))
+                .map(withBinaryDigit(_, number, 1))
+                .map(withBinaryDigit(_, number, 2))
+                .map(withBinaryDigit(_, number, 3))
+                .map(withBinaryDigit(_, number, 4))
+                .get
+    }
+
+    def withBinaryDigit(handshake: List[String], number: Int, binaryPower: Int): List[String] = {
+        if ((number & 1 << binaryPower) != 0) {
+            binaryPower match {
+                case 0 => handshake :+ "wink"
+                case 1 => handshake :+ "double blink"
+                case 2 => handshake :+ "close your eyes"
+                case 3 => handshake :+ "jump"
+                case 4 => handshake.reverse
+            }
+        }
+        else handshake
     }
 
 }
