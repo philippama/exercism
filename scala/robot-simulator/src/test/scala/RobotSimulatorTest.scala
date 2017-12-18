@@ -10,67 +10,56 @@ class RobotSimulatorTest extends FunSuite with Matchers {
 
   test(
     "A robot is created with a position and a direction - Negative positions are allowed") {
-    pending
     Robot(Bearing.South, (-1, -1)) should be(Robot(Bearing.South, (-1, -1)))
   }
 
   test(
     "rotates the robot's direction 90 degrees clockwise - does not change the position") {
-    pending
     Robot(Bearing.North, (0, 0)).turnRight.coordinates should be((0, 0))
   }
 
   test(
     "rotates the robot's direction 90 degrees clockwise - changes the direction from north to east") {
-    pending
     Robot(Bearing.North, (0, 0)).turnRight.bearing should be(Bearing.East)
   }
 
   test(
     "rotates the robot's direction 90 degrees clockwise - changes the direction from east to south") {
-    pending
     Robot(Bearing.East, (0, 0)).turnRight.bearing should be(Bearing.South)
   }
 
   test(
     "rotates the robot's direction 90 degrees clockwise - changes the direction from south to west") {
-    pending
     Robot(Bearing.South, (0, 0)).turnRight.bearing should be(Bearing.West)
   }
 
   test(
     "rotates the robot's direction 90 degrees clockwise - changes the direction from west to north") {
-    pending
     Robot(Bearing.West, (0, 0)).turnRight.bearing should be(Bearing.North)
   }
 
   test(
     "rotates the robot's direction 90 degrees counter-clockwise - does not change the position") {
-    pending
     Robot(Bearing.North, (0, 0)).turnLeft.coordinates should be((0, 0))
   }
 
   test(
     "rotates the robot's direction 90 degrees counter-clockwise - changes the direction from north to west") {
-    pending
     Robot(Bearing.North, (0, 0)).turnLeft.bearing should be(Bearing.West)
   }
 
   test(
     "rotates the robot's direction 90 degrees counter-clockwise - changes the direction from west to south") {
-    pending
     Robot(Bearing.West, (0, 0)).turnLeft.bearing should be(Bearing.South)
   }
 
   test(
     "rotates the robot's direction 90 degrees counter-clockwise - changes the direction from south to east") {
-    pending
     Robot(Bearing.South, (0, 0)).turnLeft.bearing should be(Bearing.East)
   }
 
   test(
     "rotates the robot's direction 90 degrees counter-clockwise - changes the direction from east to north") {
-    pending
     Robot(Bearing.East, (0, 0)).turnLeft.bearing should be(Bearing.North)
   }
 

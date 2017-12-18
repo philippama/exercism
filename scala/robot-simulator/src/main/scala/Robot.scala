@@ -1,18 +1,30 @@
 object Robot {
-    def apply(direction: Bearing.Value, position: (Int, Int)): Robot = {
-        new Robot(direction, position)
+    def apply(bearing: Bearing.Value, coordinates: (Int, Int)): Robot = {
+        new Robot(bearing, coordinates)
     }
 
 }
 
-class Robot(direction: Bearing.Value, position: (Int, Int)) {
+class Robot(val bearing: Bearing.Value, val coordinates: (Int, Int)) {
 
-    //TODO: Use    type Position = (Int, Int) ?
-    val bearing: Bearing.Value = direction
-    val coordinates: (Int, Int) = position
+    def turnRight: Robot = {
+        bearing match {
+            case Bearing.North => new Robot(Bearing.East, coordinates)
+            case Bearing.East => new Robot(Bearing.South, coordinates)
+            case Bearing.South => new Robot(Bearing.West, coordinates)
+            case Bearing.West => new Robot(Bearing.North, coordinates)
+        }
+    }
 
-    def turnRight: Robot = this
-    def turnLeft: Robot = this
+    def turnLeft: Robot = {
+        bearing match {
+            case Bearing.North => new Robot(Bearing.West, coordinates)
+            case Bearing.West => new Robot(Bearing.South, coordinates)
+            case Bearing.South => new Robot(Bearing.East, coordinates)
+            case Bearing.East => new Robot(Bearing.North, coordinates)
+        }
+    }
+
     def advance: Robot = this
 
     def simulate(str: String): Robot = this
@@ -37,5 +49,4 @@ class Robot(direction: Bearing.Value, position: (Int, Int)) {
 object Bearing extends Enumeration {
     type Bearing = Value
     val North, East, South, West = Value
-
 }
