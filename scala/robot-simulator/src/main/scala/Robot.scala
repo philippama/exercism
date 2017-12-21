@@ -25,7 +25,14 @@ class Robot(val bearing: Bearing.Value, val coordinates: (Int, Int)) {
         }
     }
 
-    def advance: Robot = this
+    def advance: Robot = {
+      bearing match {
+        case Bearing.North => new Robot(bearing, (coordinates._1, coordinates._2 + 1))
+        case Bearing.West => new Robot(bearing, (coordinates._1 - 1, coordinates._2))
+        case Bearing.South => new Robot(bearing, (coordinates._1, coordinates._2 - 1))
+        case Bearing.East => new Robot(bearing, (coordinates._1 + 1, coordinates._2))
+      }
+    }
 
     def simulate(str: String): Robot = this
 

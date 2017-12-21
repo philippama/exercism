@@ -65,31 +65,26 @@ class RobotSimulatorTest extends FunSuite with Matchers {
 
   test(
     "moves the robot forward 1 space in the direction it is pointing - does not change the direction") {
-    pending
     Robot(Bearing.North, (0, 0)).advance.bearing should be(Bearing.North)
   }
 
   test(
     "moves the robot forward 1 space in the direction it is pointing - increases the y coordinate one when facing north") {
-    pending
     Robot(Bearing.North, (0, 0)).advance.coordinates should be((0, 1))
   }
 
   test(
     "moves the robot forward 1 space in the direction it is pointing - decreases the y coordinate by one when facing south") {
-    pending
     Robot(Bearing.South, (0, 0)).advance.coordinates should be((0, -1))
   }
 
   test(
     "moves the robot forward 1 space in the direction it is pointing - increases the x coordinate by one when facing east") {
-    pending
     Robot(Bearing.East, (0, 0)).advance.coordinates should be((1, 0))
   }
 
   test(
     "moves the robot forward 1 space in the direction it is pointing - decreases the x coordinate by one when facing west") {
-    pending
     Robot(Bearing.West, (0, 0)).advance.coordinates should be((-1, 0))
   }
 
