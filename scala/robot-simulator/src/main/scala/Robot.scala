@@ -45,31 +45,18 @@ class Robot(val bearing: Direction, val coordinates: (Int, Int)) {
 }
 
 object Bearing {
-  // With thanks to http://exercism.io/devcraftsman for showing how to do this.
+  // With thanks to http://exercism.io/bloomonkey for the trait using a Seq of directions.
   sealed trait Direction {
-    def turnLeft() : Direction
-    def turnRight() : Direction
+    val cardinalPoints = Seq(North, East, South, West)
+
+    def turnRight(): Direction = rotate(1)
+    def turnLeft(): Direction = rotate(-1)
+
+    def rotate(numPoints: Int): Direction = cardinalPoints((cardinalPoints.indexOf(this) + numPoints) % cardinalPoints.size)
   }
 
-  object North extends Direction {
-    override def turnLeft(): Direction =  West
-    override def turnRight(): Direction =  East
-  }
-
-  object South extends Direction {
-    override def turnLeft(): Direction =  East
-    override def turnRight(): Direction =  West
-
-  }
-
-  object East extends Direction{
-    override def turnLeft(): Direction =  North
-    override def turnRight(): Direction =  South
-  }
-
-  object West extends Direction{
-    override def turnLeft(): Direction =  South
-    override def turnRight(): Direction =  North
-  }
-
+  case object North extends Direction
+  case object East extends Direction
+  case object South extends Direction
+  case object West extends Direction
 }
