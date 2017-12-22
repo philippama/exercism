@@ -1,22 +1,14 @@
+import Bearing._
+
 object Robot {
-  def apply(bearing: Bearing.Value, coordinates: (Int, Int)): Robot = new Robot(bearing, coordinates)
+  def apply(bearing: Direction, coordinates: (Int, Int)): Robot = new Robot(bearing, coordinates)
 }
 
-class Robot(val bearing: Bearing.Value, val coordinates: (Int, Int)) {
+class Robot(val bearing: Direction, val coordinates: (Int, Int)) {
 
-  def turnRight: Robot = bearing match {
-    case Bearing.North => Robot(Bearing.East, coordinates)
-    case Bearing.East => Robot(Bearing.South, coordinates)
-    case Bearing.South => Robot(Bearing.West, coordinates)
-    case Bearing.West => Robot(Bearing.North, coordinates)
-  }
+  def turnRight: Robot = Robot(bearing.turnRight(), coordinates)
 
-  def turnLeft: Robot = bearing match {
-    case Bearing.North => Robot(Bearing.West, coordinates)
-    case Bearing.West => Robot(Bearing.South, coordinates)
-    case Bearing.South => Robot(Bearing.East, coordinates)
-    case Bearing.East => Robot(Bearing.North, coordinates)
-  }
+  def turnLeft: Robot = Robot(bearing.turnLeft(), coordinates)
 
   def advance: Robot = bearing match {
     case Bearing.North => Robot(bearing, (coordinates._1, coordinates._2 + 1))
@@ -29,7 +21,7 @@ class Robot(val bearing: Bearing.Value, val coordinates: (Int, Int)) {
     commands.foldLeft(this)((robot: Robot, action: Char) => nextStep(robot, action))
   }
 
-  def nextStep(robot: Robot, action: Char): Robot = action match {
+  private def nextStep(robot: Robot, action: Char): Robot = action match {
     case 'L' => robot.turnLeft
     case 'R' => robot.turnRight
     case 'A' => robot.advance
@@ -52,7 +44,32 @@ class Robot(val bearing: Bearing.Value, val coordinates: (Int, Int)) {
   override def toString = s"Robot($bearing, $coordinates)"
 }
 
-object Bearing extends Enumeration {
-  type Bearing = Value
-  val North, East, South, West = Value
+object Bearing {
+  // With thanks to http://exercism.io/devcraftsman for showing how to do this.
+  sealed trait Direction {
+    def turnLeft() : Direction
+    def turnRight() : Direction
+  }
+
+  object North extends Direction {
+    override def turnLeft(): Direction =  West
+    override def turnRight(): Direction =  East
+  }
+
+  object South extends Direction {
+    override def turnLeft(): Direction =  East
+    override def turnRight(): Direction =  West
+
+  }
+
+  object East extends Direction{
+    override def turnLeft(): Direction =  North
+    override def turnRight(): Direction =  South
+  }
+
+  object West extends Direction{
+    override def turnLeft(): Direction =  South
+    override def turnRight(): Direction =  North
+  }
+
 }

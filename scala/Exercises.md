@@ -13,5 +13,5 @@
 | etl | Scrabble. Convert list of (score vs list of letters) to a list of letter vs score. Shows List.flatMap() and map(). Also a use of match to pull out variables without assigning them to val.  |
 | perfect-numbers | Summing factors of a number. Either, Right, Left. |
 | secret-handshake | Builds a List[String] of actions according to which binary digits are in a number. |
-| robot-simulator | Moves and turns a robot. Shows companion object and class, Enumeration, match, String.foldLeft(). |
+| robot-simulator | Moves and turns a robot. Shows companion object and class, abstract trait to do enum-ish things, match, String.foldLeft(). |
 |  |  |
