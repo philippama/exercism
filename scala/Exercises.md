@@ -12,6 +12,9 @@
 | hamming | Calculate the Hamming difference between two DNA strands. Shows Option, filter then zipping two strings into a list of duples of characters. |
 | etl | Scrabble. Convert list of (score vs list of letters) to a list of letter vs score. Shows List.flatMap() and map(). Also a use of match to pull out variables without assigning them to val.  |
 | perfect-numbers | Summing factors of a number. Either, Right, Left. |
-| secret-handshake | Builds a List[String] of actions according to which binary digits are in a number. |
+| secret-handshake | Builds a List[String] of actions according to which binary digits are in a number. Shows iterating through a map's elements. |
 | robot-simulator | Moves and turns a robot. Shows companion object and class, abstract trait to do enum-ish things, match, String.foldLeft(). |
+| matrix | Creates a matrix from a String; rows(), cols() and equals() methods. Shows String.split(), List.toVector(), List.fill(), List.foldLeft(), overriding List.equals(), Seq.sameElements(). |
+|  |  |
+|  |  |
 |  |  |
