@@ -6,7 +6,7 @@ object Matrix {
 
 class Matrix(string: String) {
 
-  // With thanks to http://exercism.io/devcraftsman
+  // With thanks to http://exercism.io/zkxs
 
   def rows: Vector[Vector[Int]] = {
     string.split("\\n")
