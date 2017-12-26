@@ -6,30 +6,22 @@ object Matrix {
 
 class Matrix(string: String) {
 
-  private val matrix: Array[Vector[Int]] = {
+  // With thanks to http://exercism.io/devcraftsman
+
+  def rows: Vector[Vector[Int]] = {
     string.split("\\n")
       .map(row => {
         row.split(" ")
           .map(element => element.toInt)
           .toVector
       })
+      .toVector
   }
 
-  def rows: List[Vector[Int]] = matrix.toList
-
-  def cols: List[Vector[Int]] = {
-    val emptyColumns = List.fill(matrix.length)(scala.collection.mutable.MutableList[Int]())
-
-    matrix.foldLeft(emptyColumns) ((columns, row) => {
-      for (i <- row.indices) {
-        columns(i) += row(i)
-      }
-      columns
-    }).map(_.toVector)
-  }
+  def cols: Vector[Vector[Int]] = rows.transpose
 
   override def equals(other: Any): Boolean = other match {
-    case that: Matrix => that.isInstanceOf[Matrix] && (matrix sameElements that.matrix)
+    case that: Matrix => rows == that.rows
     case _ => false
   }
 }

@@ -14,7 +14,7 @@
 | perfect-numbers | Summing factors of a number. Either, Right, Left. |
 | secret-handshake | Builds a List[String] of actions according to which binary digits are in a number. Shows iterating through a map's elements. |
 | robot-simulator | Moves and turns a robot. Shows companion object and class, abstract trait to do enum-ish things, match, String.foldLeft(). |
-| matrix | Creates a matrix from a String; rows(), cols() and equals() methods. Shows String.split(), List.toVector(), List.fill(), List.foldLeft(), overriding List.equals(), Seq.sameElements(). |
+| matrix | Creates a matrix from a String; rows(), cols() and equals() methods. Shows String.split(), List.toVector(), Vector.transpose(), overriding equals(). |
 |  |  |
 |  |  |
 |  |  |
