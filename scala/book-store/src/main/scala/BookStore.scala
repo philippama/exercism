@@ -20,6 +20,14 @@ object BookStore {
     }
   }
 
+  private def batchBooksWithCase(unbatchedBooks: List[List[Int]]): List[List[Int]] = {
+    unbatchedBooks match {
+      case books if books.nonEmpty => books.map(_.head) +: batchBooksWithCase(books.map(_.tail).filter(_.nonEmpty))
+      case _ => List[List[Int]]()
+    }
+  }
+
+
   private def batchPrice(basicPrice: Int, batchSize: Int) = {
     (batchSize match {
       case 2 => (1 - 0.05) * 2
