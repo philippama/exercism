@@ -1,13 +1,15 @@
 object BookStore {
   def total(basket: List[Int]): Double = {
     val price = 8
+    val unbatchedBooks = basket.groupBy(book => book).values.toList
 
-    var unbatchedBooks = basket.groupBy(book => book).values.toList
-
-    batchBooks(unbatchedBooks)
+    val batches = OptimiseBatches(batchBooks(unbatchedBooks))
+    val total = batches
       .map(_.length)
       .map(batchPrice(price, _))
       .sum
+
+    toTwoDecimalPlaces(total)
   }
 
   private def batchBooks(unbatchedBooks: List[List[Int]]): List[List[Int]] = {
@@ -15,18 +17,9 @@ object BookStore {
       List[List[Int]]()
     }
     else {
-      val newBatch = unbatchedBooks.map(_.head)
-      newBatch +: batchBooks(unbatchedBooks.map(_.tail).filter(_.nonEmpty))
+      unbatchedBooks.map(_.head) +: batchBooks(unbatchedBooks.map(_.tail).filter(_.nonEmpty))
     }
   }
-
-  private def batchBooksWithCase(unbatchedBooks: List[List[Int]]): List[List[Int]] = {
-    unbatchedBooks match {
-      case books if books.nonEmpty => books.map(_.head) +: batchBooksWithCase(books.map(_.tail).filter(_.nonEmpty))
-      case _ => List[List[Int]]()
-    }
-  }
-
 
   private def batchPrice(basicPrice: Int, batchSize: Int) = {
     (batchSize match {
@@ -36,5 +29,9 @@ object BookStore {
       case 5 => (1 - 0.25) * 5
       case _ => 1
     }) * basicPrice
+  }
+
+  private def toTwoDecimalPlaces(total: Double) = {
+    (total * 100).round.toDouble / 100
   }
 }
