@@ -40,6 +40,10 @@ class BookStoreTest extends FunSuite with Matchers {
     BookStore.total(List(1, 1, 2, 2, 3, 3, 4, 5, 1, 2, 3)) should be (72.8)
   }
 
+  test("Two groups of four is cheaper than group of five plus group of three plus extra five") {
+    BookStore.total(List(1, 1, 2, 2, 3, 3, 4, 5, 1, 2, 3, 4, 5)) should be (81.2)
+  }
+
   test("Four groups of four is cheaper than two groups of five plus two groups of three") {
     BookStore.total(List(1, 1, 2, 2, 3, 3, 4, 5, 1, 1, 2, 2, 3, 3, 4, 5)) should be (102.4)
   }
