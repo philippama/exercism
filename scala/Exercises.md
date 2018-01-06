@@ -16,5 +16,5 @@
 | robot-simulator | Moves and turns a robot. | Companion object and class, abstract trait to do enum-ish things, match, String.foldLeft(). |
 | matrix | Creates a matrix from a String; rows(), cols() and equals() methods. | String.split(), List.toVector(), Vector.transpose(), overriding equals(). |
 | book-store | Put books into batches for discounts. | List.groupBy, .head, .tail, .filter, .partition, .zipAll, .diff. Tuples |
-|  |  |  |
+| gigasecond |  |  |
 |  |  |  |
