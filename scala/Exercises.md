@@ -16,5 +16,10 @@
 | robot-simulator | Moves and turns a robot. | Companion object and class, abstract trait to do enum-ish things, match, String.foldLeft(). |
 | matrix | Creates a matrix from a String; rows(), cols() and equals() methods. | String.split(), List.toVector(), Vector.transpose(), overriding equals(). |
 | book-store | Put books into batches for discounts. | List.groupBy, .head, .tail, .filter, .partition, .zipAll, .diff. Tuples |
-| gigasecond |  |  |
+| gigasecond | Add a gigasecond to a date or to a time. | java.time |
+| difference-of-squares | Find the difference between the square of the sum and the sum of the squares of the first N natural numbers. | List from range, map, sum. |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
 |  |  |  |
