@@ -20,6 +20,6 @@
 | difference-of-squares | Find the difference between the square of the sum and the sum of the squares of the first N natural numbers. | List from range, map, sum. |
 | pangram | Determine if a sentence is a pangram i.e. contains all letters. | Regular expressions, String as CharSequence, distinct, filter, length. |
 | raindrops | Same as FizzBuzzBang. | First solution: Map.collect, partial function, .mkString, Option/Some.getOrElse. Second solution: Map.filter and reduceLeftOption. |
-|  |  |  |
+| phone-number |  |  |
 |  |  |  |
 |  |  |  |

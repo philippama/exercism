@@ -39,10 +39,10 @@ class PhoneNumberTest extends FunSuite with Matchers {
     PhoneNumber.clean("123-abc-7890") should be (None)
   }
 
-//  test("invalid with letters and the correct number of digits") {
-//    PhoneNumber.clean("123-abc-456-7890") should be (None)
-//  }
-//
+  test("invalid with letters and the correct number of digits") {
+    PhoneNumber.clean("123-abc-456-7890") should be (None)
+  }
+
   test("invalid with punctuations") {
     PhoneNumber.clean("123-@:!-7890") should be (None)
   }
