@@ -5,7 +5,7 @@ object PhoneNumber {
     Some(input)
       .map(_.filter(c => "0123456789".contains(c)))
       .map {
-        case s if s.length == 11 && s.startsWith("1") => s.substring(1)
+        case s if s.length == 11 && s.head == '1' => s.tail
         case s => s
       }
       .filter(_.matches(validStrippedPhoneNumber))
