@@ -21,5 +21,7 @@
 | pangram | Determine if a sentence is a pangram i.e. contains all letters. | Regular expressions, String as CharSequence, distinct, filter, length. |
 | raindrops | Same as FizzBuzzBang. | First solution: Map.collect, partial function, .mkString, Option/Some.getOrElse. Second solution: Map.filter and reduceLeftOption. |
 | phone-number | Clean and check a phone number. | Option, map, filter by a regular expression match, String as CharSequence, head, tail. |
+| strain | Implement Seq.filter() | Seq.foldLeft, .reverse, match, function (predicate) as parameter. |
+|  |  |  |
 |  |  |  |
 |  |  |  |
