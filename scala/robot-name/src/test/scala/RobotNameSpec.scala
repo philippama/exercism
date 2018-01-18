@@ -35,7 +35,8 @@ class RobotNameSpec extends FunSpec with Matchers {
   // The Robot code needs to be efficient enough to allow all 676,000 unique names to be generated.
   it("a large number of new instances have unique names") {
     val alreadySet = mutable.HashSet.empty[String]
-    for(_ <- 0 until 676000 - 6) { // as 6 robot names are generated in the tests above!!
+    for(i <- 0 until 676000 - 6) { // as 6 robot names are generated in the tests above!!
+      if (i % 1000 == 0) println(i)
       val name = new Robot().name
       if (alreadySet contains name) {
         fail(s"$name is repeated")

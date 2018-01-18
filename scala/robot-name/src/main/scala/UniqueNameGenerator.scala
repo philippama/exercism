@@ -7,25 +7,25 @@ object UniqueNameGenerator {
   private var names = scala.collection.mutable.Set[String]()
 
 
-  def uniqueName: String = this.synchronized { nextUniqueName }
+  def uniqueName: String = this.synchronized { nextRandomName }
 
 
   def newName(name: String): String = this.synchronized {
     if (names.contains(name)) {
       names.remove(name)
     }
-    nextUniqueName
+    nextRandomName
   }
 
   @tailrec
-  def nextUniqueName: String = {
+  def nextRandomName: String = {
     val name = generateName
     if (!names.contains(name)) {
       names = names + name
 //      if (names.size % 1000 == 0) println(names.size)
       name
     }
-    else nextUniqueName
+    else nextRandomName
   }
 
   private def generateName = randomLetters(2) + randomDigits(3)
