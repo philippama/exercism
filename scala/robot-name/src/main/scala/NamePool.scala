@@ -25,15 +25,10 @@ object NamePool {
     uniqueName
   })
 
-  @tailrec
   def nextRandomName: String = {
     val next = pool.head
-    if (!taken.contains(next)) {
-      pool.head
-      pool = pool.tail
-      taken.add(next)
-      next
-    }
-    else nextRandomName
+    pool = pool.tail
+    taken.add(next)
+    next
   }
 }
