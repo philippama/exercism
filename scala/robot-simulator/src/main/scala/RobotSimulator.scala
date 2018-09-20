@@ -52,7 +52,7 @@ object Bearing {
     def turnRight(): Direction = rotate(1)
     def turnLeft(): Direction = rotate(-1)
 
-    def rotate(numPoints: Int): Direction = cardinalPoints((cardinalPoints.indexOf(this) + numPoints) % cardinalPoints.size)
+    def rotate(numPoints: Int): Direction = cardinalPoints((cardinalPoints.indexOf(this) + cardinalPoints.size + numPoints) % cardinalPoints.size)
   }
 
   case object North extends Direction
