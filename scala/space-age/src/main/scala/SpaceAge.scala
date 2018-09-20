@@ -1,5 +1,3 @@
-package scala
-
 object SpaceAge {
     private val earthYearSeconds: Double = 31557600
     private val mercuryYearSeconds: Double = earthYearSeconds * 0.2408467

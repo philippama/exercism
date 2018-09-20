@@ -3,7 +3,7 @@ object PhoneNumber {
 
   def clean(input: String): Option[String] = {
     Some(input)
-      .map(_.filter(c => "0123456789".contains(c)))
+      .map(_.filter(_.isDigit))
       .map {
         case s if s.length == 11 && s.head == '1' => s.tail
         case s => s
