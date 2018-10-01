@@ -8,5 +8,9 @@ object Strain {
     }).reverse
   }
 
+  def keepUsingFilter[T](sequence: Seq[T], predicate: T => Boolean): Seq[T] = {
+    sequence.filter(predicate)
+  }
+
   def discard[T](sequence: Seq[T], predicate: T => Boolean): Seq[T] = keep(sequence, (x: T) => !predicate(x))
 }
