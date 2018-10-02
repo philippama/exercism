@@ -24,4 +24,8 @@
 | strain | Implement Seq.filter() | Seq.foldLeft, .reverse, match, function (predicate) as parameter. |  |
 | robot-name | Generate random names for a robot. | First solution: Range.map, .mkstring, Random.nextInt, tail recursion, synchronized, Set.remove, +, size. Second solution: similar but using a pool, Random.shuffle, List.head, ,tail, mutable.Set.contain, .add, .remove. |  |
 | grains |  |  |  |
+| scrabble-score |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
 |  |  |  |  |
