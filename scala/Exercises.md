@@ -1,7 +1,7 @@
 | Exercise | Description | Shows | Main class / object name |
 | -------- | ----------- | ----- | ------------------------ |
 | hello-world | Very simple. | HelloWorld |
-| sum-of-multiples | Find the sum of all the multiples of given numbers up to but not including a number. | List from range, filter and sum. | SumOfMultiples$ |
+| sum-of-multiples | Find the sum of all the multiples of given numbers up to but not including a number. | Sequence from range, filter and sum. | SumOfMultiples$ |
 | leap | Is a year a leap year? | A simple boolean expression. | Leap$ |
 | bob | Return a response depending on the contents of a string. | match with pattern guard | Bob$ |
 | space-age | Convert seconds to number of years on each planet. |  | SpaceAge$ |
@@ -23,8 +23,8 @@
 | phone-number | Clean and check a phone number. | Option, map, filter by a regular expression match, String as CharSequence, head, tail. |  |
 | strain | Implement Seq.filter() | Seq.foldLeft, .reverse, match, function (predicate) as parameter. |  |
 | robot-name | Generate random names for a robot. | First solution: Range.map, .mkstring, Random.nextInt, tail recursion, synchronized, Set.remove, +, size. Second solution: similar but using a pool, Random.shuffle, List.head, ,tail, mutable.Set.contain, .add, .remove. |  |
-| grains |  |  |  |
-| scrabble-score |  |  |  |
+| grains | Count the number of grains on a chessboard if the number on each square doubles. | BigInt, Sequence from range, .map, .sum. |  |
+| scrabble-score | Calculate scrabble word score. | Map, String as Seq\[Char\], .map, .sum |  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
