@@ -1,3 +1,5 @@
+exercism submit /Users/philippa.main/exercism/scala/scrabble-score/src/main/scala/ScrabbleScore.scala
+
 | Exercise | Description | Shows | Main class / object name |
 | -------- | ----------- | ----- | ------------------------ |
 | hello-world | Very simple. | HelloWorld |
@@ -25,7 +27,7 @@
 | robot-name | Generate random names for a robot. | First solution: Range.map, .mkstring, Random.nextInt, tail recursion, synchronized, Set.remove, +, size. Second solution: similar but using a pool, Random.shuffle, List.head, ,tail, mutable.Set.contain, .add, .remove. |  |
 | grains | Count the number of grains on a chessboard if the number on each square doubles. | BigInt, Sequence from range, .map, .sum. |  |
 | scrabble-score | Calculate scrabble word score. | Map, String as Seq\[Char\], .map, .sum |  |
-|  |  |  |  |
+| house | Recite the nursery rhyme 'This is the House that Jack Built'. |  |  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
