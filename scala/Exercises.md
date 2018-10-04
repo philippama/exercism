@@ -26,8 +26,8 @@ exercism submit /Users/philippa.main/exercism/scala/scrabble-score/src/main/scal
 | strain | Implement Seq.filter() | Seq.foldLeft, .reverse, match, function (predicate) as parameter. |  |
 | robot-name | Generate random names for a robot. | First solution: Range.map, .mkstring, Random.nextInt, tail recursion, synchronized, Set.remove, +, size. Second solution: similar but using a pool, Random.shuffle, List.head, ,tail, mutable.Set.contain, .add, .remove. |  |
 | grains | Count the number of grains on a chessboard if the number on each square doubles. | BigInt, Sequence from range, .map, .sum. |  |
-| scrabble-score | Calculate scrabble word score. | Map, String as Seq\[Char\], .map, .sum |  |
-| house | Recite the nursery rhyme 'This is the House that Jack Built'. |  |  |
-|  |  |  |  |
+| scrabble-score | Calculate scrabble word score. | Map, String as CharSequence, .map, .sum |  |
+| house | Recite the nursery rhyme 'This is the House that Jack Built'. | Range, .map, .reverse, .mkString |  |
+| series | For a string of digits, return | Range, .map, String as CharSequence, .asDigit |  |
 |  |  |  |  |
 |  |  |  |  |
