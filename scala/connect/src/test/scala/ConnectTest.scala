@@ -18,7 +18,6 @@ class ConnectTest extends FunSuite with Matchers {
   }
 
   test("X can win on a 1x1 board") {
-    pending
     Connect(mkBoard(List("X"))).winner should be(Some(Color.Black))
   }
 
@@ -28,9 +27,10 @@ class ConnectTest extends FunSuite with Matchers {
   }
 
   test("only edges does not make a winner") {
-    pending
-    Connect(mkBoard(List("O O O X", " X . . X", "  X . . X", "   X O O O"))).winner should be(
-      None)
+    Connect(mkBoard(List("O O O X",
+                         " X . . X",
+                         "  X . . X",
+                         "   X O O O"))).winner should be(None)
   }
 
   test("illegal diagonal does not make a winner") {

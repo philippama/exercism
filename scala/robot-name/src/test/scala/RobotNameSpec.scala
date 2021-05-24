@@ -8,7 +8,7 @@ class RobotNameSpec extends FunSpec with Matchers {
 
   it ("has a name") {
     new Robot().name should fullyMatch regex nameRegex
-  }
+    }
 
   it ("does not change its name") {
     val robot = new Robot
